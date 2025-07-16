@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brainer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* 헤더 */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: 60px;
+      background: linear-gradient(to right, #4FC3F7, #BBDEFB);
+      border-bottom: 1px solid #ccc;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .brand-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: #212121;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .login-btn {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* 중앙 */
+    .center-container {
+      position: relative;
+      height: calc(100vh - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .circle {
+      width: 180px;
+      height: 180px;
+      background-color: #3DBBFF;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .circle-text {
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      outline: none;
+      cursor: text;
+      width: 120px;
+      min-height: 40px;
+    }
+
+    .plus {
+      width: 50px;
+      height: 50px;
+      background-color: #eee;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      position: absolute;
+      z-index: 0;
+    }
+
+    /* 밀착 위치 조정 */
+    .top {
+      top: calc(50% - 115px); /* 180/2 + 5px 간격 */
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottom {
+      top: calc(50% + 115px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .left-circle {
+      left: calc(50% - 115px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .right-circle {
+      left: calc(50% + 115px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left">
+      <div class="logo">
+        <!-- 뇌 캐릭터 로고 -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 32C12 32 12 22 20 22C18 14 28 12 30 20C36 12 46 16 44 24C52 24 52 34 44 34C46 42 36 44 32 36C28 44 18 42 20 32Z" fill="#FFCDD2" stroke="#E91E63" stroke-width="2" />
+          <circle cx="24" cy="28" r="2" fill="#C2185B"/>
+          <circle cx="40" cy="28" r="2" fill="#C2185B"/>
+          <path d="M26 36 Q32 40 38 36" stroke="#D81B60" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="brand-text">brainer</span>
+      <img src="https://cdn-icons-png.flaticon.com/512/84/84380.png" class="icon" alt="save icon" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1057/1057242.png" class="icon" alt="share icon" />
+    </div>
+    <div class="right">
+      <button class="login-btn">로그인</button>
+    </div>
+  </header>
+
+  <div class="center-container">
+    <div class="plus top">+</div>
+    <div class="plus bottom">+</div>
+    <div class="plus left-circle">+</div>
+    <div class="plus right-circle">+</div>
+
+    <div class="circle">
+      <div class="circle-text" contenteditable="true">아이디어를 입력하세요</div>
+    </div>
+  </div>
+</body>
+</html>
